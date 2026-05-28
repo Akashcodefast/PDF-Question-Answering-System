@@ -17,7 +17,7 @@ function App() {
     formdata.append("file", file)
     setloading(true)
     try {
-      await axios.post("backendurl", formdata)
+      await axios.post("http://127.0.0.1:5000/upload", formdata)
       alert("File Uploaded Successfully")
     }
     catch (error) {
@@ -35,7 +35,7 @@ function App() {
     }
     setloading(true)
     try {
-      const response = await axios.post("backendurls", { question })
+      const response = await axios.post("http://127.0.0.1:5000/ask", { question })
       setanswer(response.data.answer)
     }
     catch (error) {
